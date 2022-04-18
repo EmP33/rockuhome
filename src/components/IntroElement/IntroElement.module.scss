@@ -1,0 +1,55 @@
+.navigation__element {
+  width: 25rem;
+  position: relative;
+  transition: all 0.2s linear;
+  font-family: var(--font-secondary);
+  letter-spacing: 2px;
+  margin: 1rem;
+
+  @media only screen and (max-width: 37.5em) {
+    width: 100vw;
+    margin: 0;
+    border-radius: none;
+  }
+
+  & > img {
+    width: 100%;
+    height: 35rem;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 3px solid var(--color-highlight);
+    @media only screen and (max-width: 37.5em) {
+      height: 50rem;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    width: 100%;
+    max-height: 32.5%;
+    background: rgba(#826f66, $alpha: 0.85);
+    text-align: center;
+    border-radius: 0 0 1rem 1rem;
+    border: 3px solid var(--color-highlight);
+    @media only screen and (max-width: 37.5em) {
+      border-radius: 0;
+      border: none;
+    }
+
+    & > h3 {
+      font-size: 3.5rem;
+      margin: 0;
+      padding: 1rem 0.5rem;
+      text-transform: uppercase;
+      color: var(--color-white);
+    }
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+}

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&display=swap");
 
 :root {
   --color-primary: #3a3845;
@@ -22,8 +22,8 @@
   --border-intro: 3px solid var(--color-primary);
 
   --font-primary: "Open Sans", sans-serif;
-  --font-secondary: "Poppings", sans-serif;
-  --font-header: "Lato", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --font-header: "Cinzel", serif;
 
   // RESPONSIVE BREAKPOINTS
   --bp-largest: 75em; // 1200px
@@ -38,11 +38,11 @@
 
 html,
 body {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   margin: 0;
   font-weight: 300;
   font-size: 62.5%; // 1rem - 10px
-  background-color: var(--color-white);
+  background-color: rgb(241, 241, 241);
   scroll-behavior: smooth;
 
   @media only screen and (min-width: 75em) {

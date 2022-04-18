@@ -4,8 +4,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 0.5rem;
-  background-color: var(--color-highlight);
-  color: var(--color-grey-2);
+  background-color: var(--color-secondary);
 
   &__menu-wrapper {
     & > button {
@@ -21,7 +20,7 @@
       cursor: pointer;
 
       &:hover {
-        filter: brightness(90%);
+        color: var(--color-tertiary);
       }
 
       .menu-icon {
@@ -55,7 +54,7 @@
       height: 100%;
       background: none;
       border: none;
-      color: var(--color-secondary);
+      color: var(--color-primary);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -87,7 +86,7 @@
 
       &:hover,
       &:active {
-        color: rgba(255, 255, 255, 0.8);
+        color: var(--color-tertiary);
       }
 
       @media only screen and (max-width: 37.5em) {
@@ -117,7 +116,7 @@
 }
 
 .header {
-  background-color: var(--color-secondary);
+  background-color: var(--color-highlight);
   display: grid;
   grid-template-columns: max-content 1fr 7rem 7rem;
   justify-items: center;
@@ -211,7 +210,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--color-highlight);
+      background-color: var(--color-secondary);
       color: var(--color-primary);
       font-size: 1rem;
       position: absolute;
