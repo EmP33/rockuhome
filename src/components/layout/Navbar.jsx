@@ -7,12 +7,9 @@ import classes from "./Navbar.module.scss";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { ImSearch } from "react-icons/im";
-import {
-  IoHeartOutline,
-  IoMenu,
-  IoChatboxEllipsesOutline,
-} from "react-icons/io5";
-import { BsBag } from "react-icons/bs";
+import { IoHeartOutline, IoMenu } from "react-icons/io5";
+import { RiShoppingCartFill, RiLoader3Fill } from "react-icons/ri";
+import { BsFillEnvelopeFill } from "react-icons/bs";
 
 import {
   TextField,
@@ -21,7 +18,6 @@ import {
   MenuItem,
   OutlinedInput,
 } from "@material-ui/core";
-import { RiLoader3Fill } from "react-icons/ri";
 
 import { useTranslation } from "react-i18next";
 import Cookies from "js-cookie";
@@ -113,6 +109,7 @@ const Navbar = () => {
             className={classes["search-bar"]}
             variant="outlined"
             onChange={changeInputHandler}
+            inputProps={{ style: { color: "#f7ccac" } }}
           />
           <button className={classes.button} type="submit">
             <ImSearch className={classes.searchIcon} />
@@ -132,12 +129,12 @@ const Navbar = () => {
               </span>
             )}
 
-            <BsBag className={classes["cartIcon"]} />
+            <RiShoppingCartFill className={classes["cartIcon"]} />
           </Link>
         </div>
         <div className={classes["chat-wrapper"]}>
           <Link to="/help/contact">
-            <IoChatboxEllipsesOutline className={classes.chatIcon} />
+            <BsFillEnvelopeFill className={classes.chatIcon} />
           </Link>
         </div>
       </header>

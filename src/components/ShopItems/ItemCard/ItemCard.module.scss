@@ -4,6 +4,7 @@
     height: 15rem;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 
     .card-backdrop {
       width: 100%;
@@ -11,7 +12,6 @@
       position: absolute;
       display: flex;
       align-items: flex-end;
-      padding: 0.5rem;
       transition: all 0.2s linear;
 
       & > button {
@@ -71,7 +71,6 @@
 
         &:hover,
         &:active {
-          font-size: 1.5rem;
           border: 2px solid var(--color-primary);
         }
       }
@@ -100,7 +99,6 @@
 
         &:hover,
         &:active {
-          font-size: 1.5rem;
           border: 2px solid var(--color-primary);
         }
       }
@@ -122,14 +120,14 @@
 
     & > a {
       text-decoration: none;
-      color: var(--color-primary);
+      color: #0f1111;
       display: inline-block;
 
       & > h3 {
         font-weight: lighter;
-        font-size: 1rem;
+        font-size: 14px;
         margin-top: 0.5rem;
-        text-align: justify;
+        text-align: left;
       }
 
       &:hover {
@@ -137,10 +135,10 @@
       }
     }
     .price {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       display: block;
       font-weight: 600;
-      color: var(--color-grey-2);
+      color: var(--color-primary);
     }
 
     .discount-wrapper {
@@ -173,7 +171,6 @@
   width: 15rem;
   height: 25rem;
   margin: 1rem;
-  background: var(--color-white);
 
   @extend %card-placeholder;
 }
@@ -182,7 +179,6 @@
   width: 15rem;
   height: 25rem;
   margin: 1rem;
-  background: var(--color-white);
 
   @media only screen and (max-width: 25em) {
     width: 95vw;

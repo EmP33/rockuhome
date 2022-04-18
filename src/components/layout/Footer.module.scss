@@ -2,7 +2,8 @@
   grid-column: 1/-1;
   display: grid;
   border-top: 1px solid var(--color-grey-light-4);
-  background-color: #fff;
+  background-color: var(--color-highlight);
+  color: var(--color-primary);
 
   &__button {
     cursor: pointer;
@@ -10,14 +11,16 @@
     width: 100%;
     text-align: center;
     text-decoration: none;
-    color: var(--color-grey-4);
-    background: none;
+    color: var(--color-primary);
+    background: var(--color-secondary);
     font-size: 1.4rem;
     letter-spacing: 1.4px;
     padding: 1rem;
+    border-bottom: 1px solid var(--color-primary);
 
     &:hover {
-      background-color: #e6e6e6;
+      background-color: var(--color-primary);
+      color: #fff;
     }
   }
 
@@ -79,7 +82,7 @@
     text-align: center;
   }
   &-copy {
-    background: var(--color-grey-4);
+    background-color: var(--color-primary);
     color: #fff;
     font-size: 1.2rem;
     display: flex;

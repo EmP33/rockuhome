@@ -21,7 +21,8 @@
 
   .order-section {
     padding: 1rem 2rem 2rem 2rem;
-    background-color: var(--color-white);
+    background: var(--color-white);
+    color: var(--color-primary);
     border-radius: 2.5rem 0 0 2.5rem;
     display: grid;
 
@@ -30,6 +31,7 @@
     }
     @media only screen and (max-width: 37.5em) {
       padding: 0.5rem;
+      border-radius: 0;
     }
     &__header {
       display: grid;
@@ -41,24 +43,19 @@
       & > h2 {
         font-size: 2rem;
         margin: 0;
-        color: var(--color-grey-2);
+        color: var(--color-primary);
         grid-row: 2/3;
       }
       & > span {
         font-weight: bold;
         justify-self: flex-end;
         font-size: 1.2rem;
-        color: var(--color-grey-2);
+        color: var(--color-primary);
         grid-row: 2/3;
       }
 
       &-logo {
         max-width: 25rem;
-        border: 1px solid var(--color-white);
-
-        &:hover {
-          border: var(--border-details);
-        }
       }
     }
 
@@ -95,10 +92,10 @@
         text-decoration: none;
         background: none;
         cursor: pointer;
-        color: var(--color-grey-2);
+        color: var(--color-primary);
         font-size: 1.2rem;
         padding: 0.5rem 1rem 0.5rem 1rem;
-        border: 1px solid var(--color-white);
+
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
         -khtml-user-select: none; /* Konqueror HTML */
@@ -110,18 +107,14 @@
         .backIcon {
           margin-right: 0.5rem;
         }
-
-        &:hover {
-          border: 1px solid var(--color-grey-2);
-        }
       }
     }
   }
   .payments-section {
     border-radius: 0 2.5rem 2.5rem 0;
     padding: 2rem;
-    background: var(--color-grey-3);
-    color: var(--color-grey-2);
+    background: var(--color-primary);
+    color: var(--color-white);
     display: grid;
     align-items: flex-start;
 
@@ -168,7 +161,7 @@
     }
 
     &__summary {
-      border-top: 1px solid #646464;
+      border-top: 1px solid var(--color-primary);
       padding-top: 1rem;
       display: grid;
       grid-row-gap: 1.5rem;
@@ -187,17 +180,13 @@
       & button {
         grid-column: 1/-1;
         padding: 1rem 2rem 1rem 2rem;
-        background: rgba(61, 61, 61, 1);
+        background: var(--color-tertiary);
         color: var(--color-white);
         font-size: 1.4rem;
         text-align: center;
         font-weight: bold;
         border: none;
         cursor: pointer;
-
-        &:hover {
-          background: rgba(61, 61, 61, 0.9);
-        }
 
         &:disabled {
           background: rgba(61, 61, 61, 0.5);

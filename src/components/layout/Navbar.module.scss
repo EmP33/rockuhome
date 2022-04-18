@@ -3,25 +3,25 @@
 .navigation {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
-  background-color: var(--color-grey-2);
-  color: var(--color-white);
+  padding: 0 0.5rem;
+  background-color: var(--color-highlight);
+  color: var(--color-grey-2);
 
   &__menu-wrapper {
     & > button {
       font-size: 1.2rem;
-      padding: 0 1.5rem 0 1.5rem;
+      padding: 0.75rem 1.5rem 0.75rem 1.5rem;
       height: 100%;
       background: none;
-      border: 1px solid var(--color-grey-2);
-      color: var(--color-white);
+      border: none;
+      color: var(--color-primary);
       display: flex;
       align-items: center;
-      font-weight: bold;
       justify-content: center;
+      cursor: pointer;
 
       &:hover {
-        border: 1px solid var(--color-white);
+        filter: brightness(90%);
       }
 
       .menu-icon {
@@ -39,7 +39,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2rem;
     align-items: center;
-    border: 1px solid var(--color-grey-2);
 
     @media only screen and (max-width: 37.5em) {
       grid-column-gap: 0.5rem;
@@ -52,21 +51,22 @@
 
     .wishButton {
       font-size: 1.2rem;
-      padding: 0 1.5rem 0 1.5rem;
+      padding: 0.75rem 1.5rem 0.75rem 1.5rem;
       height: 100%;
       background: none;
-      border: 1px solid var(--color-grey-2);
-      color: var(--color-white);
+      border: none;
+      color: var(--color-secondary);
       display: flex;
       align-items: center;
-      font-weight: bold;
       justify-content: center;
+
       @media only screen and (max-width: 31.25em) {
         font-size: 1.1rem;
       }
     }
 
     .button-help {
+      padding: 0.75rem 1.5rem 0.75rem 1.5rem;
       @media only screen and (max-width: 31.25em) {
         display: none;
       }
@@ -75,12 +75,11 @@
     & > a,
     & > a:visited {
       background: none;
-      border: 1px solid var(--color-grey-2);
       border-radius: 2px;
       cursor: pointer;
       font-size: 1.1rem;
       text-decoration: none;
-      color: var(--color-white);
+      color: var(--color-primary);
       display: flex;
       align-items: center;
       outline: none;
@@ -88,7 +87,6 @@
 
       &:hover,
       &:active {
-        border: 1px solid var(--color-white);
         color: rgba(255, 255, 255, 0.8);
       }
 
@@ -119,7 +117,7 @@
 }
 
 .header {
-  background: var(--color-grey-3);
+  background-color: var(--color-secondary);
   display: grid;
   grid-template-columns: max-content 1fr 7rem 7rem;
   justify-items: center;
@@ -132,11 +130,11 @@
   }
 
   &-logo {
-    border: 1px solid var(--color-grey-3);
     border-radius: 2px;
     cursor: pointer;
+
     &:hover {
-      border: 1px solid var(--color-grey-1);
+      background: #fcd2b2;
     }
   }
 
@@ -147,6 +145,8 @@
     align-items: center;
     height: 3rem;
     position: relative;
+    color: var(--color-primary);
+    outline: none;
 
     @media only screen and (max-width: 62.5em) {
       margin: 0 0.5rem;
@@ -162,14 +162,22 @@
       width: 15rem;
       margin: 0;
       padding: 0;
-      background-color: var(--color-white);
+      background-color: var(--color-primary);
+
+      & div {
+        color: var(--color-secondary);
+      }
+      & svg {
+        color: var(--color-secondary);
+      }
     }
 
     .search-bar {
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: var(--color-white);
+      background-color: var(--color-primary);
+      color: var(--color-secondary);
       outline: none;
     }
 
@@ -189,7 +197,7 @@
         width: 1.8rem;
         height: 1.8rem;
         cursor: pointer;
-        color: var(--color-primary);
+        color: var(--color-secondary);
       }
     }
   }
@@ -203,12 +211,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-grey-4);
-      font-size: 1.1rem;
+      background-color: var(--color-highlight);
+      color: var(--color-primary);
+      font-size: 1rem;
       position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-55%, -50%);
+      width: 1.4rem;
+      height: 1.4rem;
+      border: 1px solid var(--color-primary);
+
+      top: -20%;
+      right: -30%;
+      border-radius: 50%;
     }
 
     .cartIcon {
@@ -226,27 +239,10 @@
     position: relative;
     cursor: pointer;
 
-    & > span {
-      width: 1.3rem;
-      height: 1.3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-white);
-      position: absolute;
-      right: -5px;
-      top: -5px;
-      background-color: var(--color-secondary);
-      padding: 0.2rem;
-      border-radius: 50%;
-    }
-
     .chatIcon {
       width: 2.5rem;
       height: 2.5rem;
       color: var(--color-primary);
-      border: 1px solid var(--color-grey-3);
-      border-radius: 2px;
     }
     @media only screen and (max-width: 37.5em) {
       grid-column: -1/-2;

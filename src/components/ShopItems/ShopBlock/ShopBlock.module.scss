@@ -1,5 +1,5 @@
 .shop-block {
-  background-color: var(--color-white);
+  background-color: var(--color-grey-3);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -9,7 +9,7 @@
   }
 
   & > h4 {
-    color: var(--color-grey-2);
+    color: var(--color-primary);
     font-size: 2.4rem;
     margin: 0;
     font-weight: bold;

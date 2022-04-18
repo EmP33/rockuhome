@@ -30,7 +30,7 @@ const Slider = ({ title }) => {
       <h3>{title}</h3>
       <Swiper
         slidesPerView={slideCount}
-        spaceBetween={5}
+        spaceBetween={7}
         loop={true}
         pagination={{
           clickable: true,
@@ -39,7 +39,7 @@ const Slider = ({ title }) => {
         className={classes.swiper}
       >
         {products.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item.id} className={classes.swiperslide}>
             <ItemCard product={item} />
           </SwiperSlide>
         ))}

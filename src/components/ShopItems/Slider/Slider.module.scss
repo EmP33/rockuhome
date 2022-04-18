@@ -1,20 +1,19 @@
 .slider {
   margin: 0 auto;
   width: 100%;
-  border-radius: 3px;
-  background-color: var(--color-white);
   border-radius: 1rem;
+  background-color: var(--color-grey-3);
 
   & > h3 {
     font-size: 2.5rem;
-    color: var(--color-grey-2);
+    color: var(--color-primary);
     margin: 0;
     padding: 1rem;
   }
 
   .swiper {
     width: 100rem;
-    height: 30rem;
+    height: 27rem;
 
     @media only screen and (max-width: 87.5em) {
       width: 80rem;

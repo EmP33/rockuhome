@@ -3,9 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap");
 
 :root {
-  --color-primary: #1b262c;
-  --color-secondary: #0f4c75;
-  --color-thertiary: #3282b8;
+  --color-primary: #3a3845;
+  --color-secondary: #f7ccac;
+  --color-highlight: #c69b7b;
+  --color-tertiary: #826f66;
 
   --color-light-blue-1: #bbe1fa;
 
@@ -17,7 +18,8 @@
 
   --color-white: #fff;
 
-  --border-details: 1px solid var(--color-grey-2);
+  --border-details: 1px solid var(--color-primary);
+  --border-intro: 3px solid var(--color-primary);
 
   --font-primary: "Open Sans", sans-serif;
   --font-secondary: "Poppings", sans-serif;
@@ -40,7 +42,7 @@ body {
   margin: 0;
   font-weight: 300;
   font-size: 62.5%; // 1rem - 10px
-  background-color: var(--color-grey-3);
+  background-color: var(--color-white);
   scroll-behavior: smooth;
 
   @media only screen and (min-width: 75em) {
@@ -59,4 +61,8 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary) !important;
 }

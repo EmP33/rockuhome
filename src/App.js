@@ -24,7 +24,7 @@ import {
 } from "./pages";
 
 // COMMERCE
-import { commerce } from "./lib/commerce";
+import { commerce } from "./lib/commerce.js";
 
 // REDUX STORE
 import { useDispatch } from "react-redux";
@@ -33,6 +33,7 @@ import { userActions } from "./store/userSlice";
 
 import useHttp from "./hooks/use-http";
 import { getAllProducts, getAllCategories } from "./lib/api";
+import IntroPage from "./pages/Intro/IntroPage";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -105,7 +106,7 @@ const App = () => {
           <Route path={`regulations`} element={<RegulationsPage />} />
           <Route path={`contact`} element={<ContactPage />} />
         </Route>
-
+        <Route path="/intro" element={<IntroPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
