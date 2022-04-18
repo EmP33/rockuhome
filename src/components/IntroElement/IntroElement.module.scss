@@ -1,10 +1,12 @@
 .navigation__element {
-  width: 25rem;
+  width: 35rem;
   position: relative;
   transition: all 0.2s linear;
   font-family: var(--font-secondary);
   letter-spacing: 2px;
   margin: 1rem;
+  transform: skewX(-10deg);
+  border-radius: 3rem;
 
   @media only screen and (max-width: 37.5em) {
     width: 100vw;
@@ -14,11 +16,12 @@
 
   & > img {
     width: 100%;
-    height: 35rem;
+    height: 22.5rem;
     cursor: pointer;
     object-fit: cover;
-    border-radius: 1rem;
-    border: 3px solid var(--color-highlight);
+    border-radius: 3rem;
+    transition: all 0.2s linear;
+
     @media only screen and (max-width: 37.5em) {
       height: 50rem;
       border: none;
@@ -31,25 +34,58 @@
     bottom: 0;
     cursor: pointer;
     width: 100%;
-    max-height: 32.5%;
-    background: rgba(#826f66, $alpha: 0.85);
-    text-align: center;
-    border-radius: 0 0 1rem 1rem;
-    border: 3px solid var(--color-highlight);
+    height: 100%;
+    background: rgba(#3a3845, $alpha: 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    transition: all 0.2s linear;
     @media only screen and (max-width: 37.5em) {
       border-radius: 0;
       border: none;
     }
 
     & > h3 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin: 0;
       padding: 1rem 0.5rem;
       text-transform: uppercase;
-      color: var(--color-white);
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 1);
+    }
+
+    &:hover {
+      background: rgba(#3a3845, $alpha: 0.5);
     }
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(10px, 10px);
+    border: 0;
+    border-radius: 3rem;
+    z-index: -1;
+    transition: all 0.1s linear;
+    transition-delay: 0.2s;
+  }
+
   &:hover {
-    opacity: 0.5;
+    transform: translate(-10px, -10px) skewX(-10deg);
+
+    & > img {
+      -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.4);
+      box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    &::before {
+      border: 3px solid rgba($color: #3a3845, $alpha: 0.7);
+    }
   }
 }

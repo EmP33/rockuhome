@@ -5,6 +5,7 @@ import bedroom from "../assets/bedroom.jpg";
 import hall from "../assets/hall.jpg";
 import dining_room from "../assets/dining_room.jpg";
 import office from "../assets/office.jpg";
+import garage from "../assets/garage.jpg";
 
 export default {
   bathroom,
@@ -14,4 +15,5 @@ export default {
   office,
   dining_room,
   hall,
+  garage,
 };

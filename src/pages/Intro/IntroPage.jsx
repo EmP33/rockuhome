@@ -21,13 +21,6 @@ const IntroPage = () => {
         <h2 styleName="header">CHOOSE A ROOM</h2>
         <section styleName="navigation">
           <IntroElement title="Bedroom" image={images.bedroom} link="bedroom" />
-          <IntroElement
-            title="Bathroom"
-            image={images.bathroom}
-            link="bathroom"
-          />
-          <IntroElement title="Hall" image={images.hall} link="hall" />
-          <IntroElement title="Office" image={images.office} link="office" />
           <IntroElement title="Kitchen" image={images.kitchen} link="kitchen" />
           <IntroElement
             title="Living Room"
@@ -38,7 +31,15 @@ const IntroPage = () => {
             title="Dining Room"
             image={images.dining_room}
             link="diningroom"
+          />{" "}
+          <IntroElement title="Office" image={images.office} link="office" />
+          <IntroElement title="Hall" image={images.hall} link="hall" />
+          <IntroElement
+            title="Bathroom"
+            image={images.bathroom}
+            link="bathroom"
           />
+          <IntroElement title="Garage" image={images.garage} link="garage" />
         </section>
       </div>
     </div>
