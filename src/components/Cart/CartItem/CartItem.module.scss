@@ -1,6 +1,6 @@
 %item-placeholder {
   &:first-child {
-    border-top: 1px solid var(--color-primary);
+    border-top: 1px solid var(--color-highlight-dark);
   }
 
   & > * {
@@ -30,7 +30,7 @@
     & a {
       font-size: 1.1rem;
       text-decoration: none;
-      color: #6b6b6b;
+      color: var(--color-priamry);
       margin: 0 0 0.5rem 0;
 
       &:hover {
@@ -41,9 +41,9 @@
     & p {
       margin: 0;
       font-size: 0.9rem;
-      font-family: var(--font-header);
+      font-family: var(--font-primary);
       font-weight: bold;
-      color: var(--color-grey-4);
+      color: var(--color-primary-dark);
     }
   }
 
@@ -108,7 +108,7 @@
   .itemPrice {
     display: flex;
     font-size: 1.4rem;
-    color: #6b6b6b;
+    color: var(--color-primary);
     grid-column: 2/3;
     grid-row: 2/3;
     // justify-self: center;
@@ -144,7 +144,7 @@
 .item {
   width: 100%;
   height: 12rem;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-highlight-dark);
   background-color: var(--color-white);
   margin-bottom: 0.5rem;
   display: grid;

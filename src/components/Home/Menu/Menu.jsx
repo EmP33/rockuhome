@@ -19,6 +19,8 @@ const Menu = ({ showModal }) => {
     dispatch(modalActions.toggleShowMenu());
   }, [dispatch]);
 
+  console.log(categories);
+
   return (
     <React.Fragment>
       {ReactDOM.createPortal(

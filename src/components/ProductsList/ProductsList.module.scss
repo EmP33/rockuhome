@@ -1,5 +1,5 @@
 .products {
-  background-color: var(--color-white);
+  background-color: var(--color-tertiary);
   margin: 1rem;
   padding: 1rem;
   border-radius: 1rem;
@@ -10,13 +10,18 @@
     padding: 0.5rem;
   }
   &-header {
-    background: var(--color-primary);
-    color: var(--color-secondary);
+    background: var(--color-highlight);
+    color: var(--color-primary-dark);
+    border-radius: 0.5rem;
 
     & > h1 {
       font-size: 2.5rem;
       margin: 0;
       padding: 1rem;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      text-align: center;
     }
   }
 
@@ -24,9 +29,14 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    border-bottom: var(--border-details);
+    border-top: var(--border-details);
     padding: 0.5rem;
-    background: #43414a;
+    background: var(--color-primary-dark);
+    color: var(--color-tertiary);
+
+    @media only screen and (max-width: 37.5em) {
+      justify-content: center;
+    }
 
     form {
       display: flex;
@@ -40,9 +50,9 @@
 
       & > button {
         padding: 0.5rem 2rem;
-        background: var(--color-primary);
-        border: 1px solid var(--color-secondary);
-        color: var(--color-secondary);
+        background: var(--color-highlight);
+        border: 1px solid var(--color-primary-light);
+        color: var(--color-primary-dark);
         cursor: pointer;
         font-weight: bold;
 
@@ -119,34 +129,31 @@
     margin: 4rem 0;
     display: grid;
     justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(6, max-content);
-    column-gap: 2rem;
-    row-gap: 2rem;
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 0.1rem;
+    row-gap: 1rem;
 
-    @media only screen and (max-width: 100em) {
+    @media only screen and (min-width: 112.5em) {
       grid-template-columns: repeat(5, max-content);
-      column-gap: 3rem;
-      row-gap: 4rem;
     }
-    @media only screen and (max-width: 81.25em) {
-      grid-template-columns: repeat(4, max-content);
+    @media only screen and (max-width: 87.5em) {
+      grid-template-columns: repeat(3, max-content);
     }
     @media only screen and (max-width: 75em) {
-      grid-template-columns: repeat(5, max-content);
-    }
-    @media only screen and (max-width: 62.5em) {
       grid-template-columns: repeat(4, max-content);
     }
-    @media only screen and (max-width: 50em) {
+    @media only screen and (max-width: 68.75em) {
       grid-template-columns: repeat(3, max-content);
+    }
+    @media only screen and (max-width: 50em) {
+      grid-template-columns: repeat(2, max-content);
     }
     @media only screen and (max-width: 37.5em) {
       grid-template-columns: repeat(2, max-content);
     }
-    @media only screen and (max-width: 25em) {
-      column-gap: 0;
+    @media only screen and (max-width: 31.25em) {
       width: 100%;
+      row-gap: 0.25rem;
       grid-template-columns: repeat(1, max-content);
     }
   }

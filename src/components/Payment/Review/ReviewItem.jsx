@@ -14,7 +14,7 @@ const ReviewItem = ({ item }) => {
           {t("quantity")}: {item.quantity} {t("for")}{" "}
           {item.price.formatted_with_code}
         </p>
-        <p>{(item.quantity * item.price.raw).toFixed(2)} PLN</p>
+        <p>{(item.quantity * item.price.raw).toFixed(2)} USD</p>
       </div>
     </div>
   );

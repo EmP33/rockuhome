@@ -1,7 +1,6 @@
 %card-placeholder {
   .card-container {
     width: 100%;
-    height: 15rem;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -45,14 +44,17 @@
       background: rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: flex-end;
+      flex-direction: column;
+      justify-content: flex-end;
       padding: 0.5rem;
+      border-radius: 0.7rem 0.7rem 0 0;
 
       & > button {
         margin: 0.5rem;
         cursor: pointer;
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 2.2rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -77,9 +79,9 @@
       & > a {
         margin: 0.5rem;
         cursor: pointer;
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 2.2rem;
         display: flex;
         color: #000;
         align-items: center;
@@ -107,16 +109,12 @@
     .card-image {
       width: 100%;
       object-fit: contain;
+      border-radius: 0.7rem;
     }
   }
 
   .card-content {
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-top: var(--border-details);
 
     & > a {
       text-decoration: none;
@@ -125,9 +123,13 @@
 
       & > h3 {
         font-weight: lighter;
-        font-size: 14px;
+        font-size: 1.2rem;
+        font-family: var(--font-secondary);
+        color: var(--color-primary-dark);
+        font-weight: 500;
         margin-top: 0.5rem;
         text-align: left;
+        padding: 0 0.5rem;
       }
 
       &:hover {
@@ -137,8 +139,14 @@
     .price {
       font-size: 1.5rem;
       display: block;
+      // position: absolute;
+      // bottom: 0;
+      text-align: center;
+      padding: 0.5rem;
       font-weight: 600;
-      color: var(--color-primary);
+      background-color: var(--color-primary);
+      color: var(--color-highlight);
+      width: 100%;
     }
 
     .discount-wrapper {
@@ -168,19 +176,26 @@
 }
 
 .card {
-  width: 15rem;
-  height: 25rem;
+  width: 22.5rem;
   margin: 1rem;
-
+  background: var(--color-white);
+  border: 3px solid var(--color-highlight);
+  border-radius: 0.7rem;
+  display: grid;
+  grid-template-rows: 1fr max-content;
   @extend %card-placeholder;
 }
 
 .card-list {
-  width: 15rem;
-  height: 25rem;
+  width: 22.5rem;
   margin: 1rem;
+  background: var(--color-white);
+  border: 3px solid var(--color-highlight);
+  border-radius: 0.7rem;
+  display: grid;
+  grid-template-rows: 1fr max-content;
 
-  @media only screen and (max-width: 25em) {
+  @media only screen and (max-width: 31.25em) {
     width: 95vw;
     height: 17.5rem;
     display: grid;
@@ -189,27 +204,27 @@
   }
 
   .card-container {
-    @media only screen and (max-width: 25em) {
+    @media only screen and (max-width: 31.25em) {
       width: 15rem;
       height: 15rem;
     }
   }
 
   .card-backdrop {
-    @media only screen and (max-width: 25em) {
+    @media only screen and (max-width: 31.25em) {
       width: 15rem;
       height: 15rem;
     }
   }
   &:hover .card-backdrop {
-    @media only screen and (max-width: 25em) {
+    @media only screen and (max-width: 31.25em) {
       width: 15rem;
       height: 15rem;
     }
   }
 
   .card-image {
-    @media only screen and (max-width: 25em) {
+    @media only screen and (max-width: 31.25em) {
       width: 15rem;
       height: 15rem;
       object-fit: contain;
@@ -217,17 +232,17 @@
   }
 
   .card-content {
-    @media only screen and (max-width: 25em) {
+    @media only screen and (max-width: 31.25em) {
       border-top: none;
     }
 
     & > a > h3 {
-      @media only screen and (max-width: 25em) {
+      @media only screen and (max-width: 31.25em) {
         font-size: 1.2rem;
       }
     }
     .price {
-      @media only screen and (max-width: 25em) {
+      @media only screen and (max-width: 31.25em) {
         font-size: 2rem;
       }
     }

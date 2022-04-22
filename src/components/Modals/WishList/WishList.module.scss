@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   width: 75%;
   z-index: 1000;
-  background-color: #fff;
+  background-color: var(--color-tertiary);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.3);
   color: #000;
@@ -13,7 +13,6 @@
   display: grid;
   grid-template-columns: 1fr;
   // grid-template-columns: max-content 1fr;
-  padding: 1rem;
 
   @media only screen and (max-width: 81.25em) {
     width: 90%;
@@ -43,7 +42,8 @@
     height: 3rem;
     font-size: 2rem;
     background: none;
-    border: 1px solid var(--color-white);
+    border: 1px solid var(--color-primary);
+    color: var(--color-highlight);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,48 +66,7 @@
     font-weight: 100;
   }
 
-  &__user {
-    border-right: var(--border-details);
-    padding: 3rem;
-
-    @media only screen and (max-width: 50em) {
-      padding: 2rem;
-    }
-
-    @media only screen and (max-width: 37.5em) {
-      border-bottom: var(--border-details);
-      border-right: 0;
-    }
-    @media only screen and (max-width: 25em) {
-      padding: 0.5rem;
-    }
-
-    &-avatar {
-      cursor: default;
-      width: 10rem;
-      margin: 0 auto 1rem;
-      height: 10rem;
-      background: var(--color-thertiary);
-      color: #fff;
-      border-radius: 50%;
-      font-size: 8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .userIcon {
-        color: var(--color-primary);
-      }
-    }
-
-    & > h3 {
-      color: var(--color-grey-4);
-      margin: 0;
-      font-size: 1.4rem;
-    }
-  }
-
   &__products {
-    padding: 2rem;
     display: grid;
 
     @media only screen and (max-width: 25em) {
@@ -115,12 +74,15 @@
     }
     & > h1 {
       font-size: 2rem;
+      margin: 0;
+      padding: 2rem 1rem;
       display: flex;
-      color: var(--color-grey-4);
+      color: var(--color-highlight);
+      background: var(--color-primary);
     }
 
     &-list {
-      max-width: 72rem;
+      max-width: 75rem;
       list-style-type: none;
       display: grid;
       grid-template-columns: repeat(4, max-content);
@@ -129,7 +91,7 @@
       justify-self: center;
       align-items: center;
       padding: 0;
-      max-height: 27rem;
+      max-height: 35rem;
       overflow: auto;
 
       @media only screen and (max-width: 106.25em) {

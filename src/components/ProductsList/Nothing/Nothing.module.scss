@@ -1,13 +1,11 @@
 .nothing {
   margin: 2rem 0;
-  font-size: 2.5rem;
+  min-height: 30vh;
+  font-size: 2.25rem;
   font-weight: bold;
-  color: var(--color-grey-3);
+  color: var(--color-primary);
 
   & > svg {
-    font-size: 15rem;
-    @media only screen and (max-width: 37.5em) {
-      font-size: 15rem;
-    }
+    font-size: 10rem;
   }
 }

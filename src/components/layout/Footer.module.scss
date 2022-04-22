@@ -1,9 +1,9 @@
 .footer {
   grid-column: 1/-1;
   display: grid;
-  border-top: 1px solid var(--color-grey-light-4);
-  background-color: var(--color-highlight);
-  color: var(--color-primary);
+  border-top: 1px solid var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
 
   &__button {
     cursor: pointer;
@@ -11,16 +11,16 @@
     width: 100%;
     text-align: center;
     text-decoration: none;
-    color: var(--color-primary);
-    background: var(--color-secondary);
+    color: var(--color-white);
+    background: var(--color-primary-light);
     font-size: 1.4rem;
     letter-spacing: 1.4px;
     padding: 1rem;
-    border-bottom: 1px solid var(--color-primary);
+    border-bottom: 1px solid var(--color-primary-light);
 
     &:hover {
-      background-color: var(--color-primary);
-      color: #fff;
+      background-color: var(--color-highlight);
+      color: var(--color-primary-dark);
     }
   }
 
@@ -47,9 +47,13 @@
         & > li {
           margin: 1rem 0 1rem 0;
           & > a {
-            color: var(--color-primary);
+            color: var(--color-white);
             text-decoration: none;
             font-size: 1.2rem;
+
+            &:hover {
+              color: var(--color-highlight);
+            }
           }
         }
       }
@@ -69,9 +73,12 @@
         & > li {
           margin: 1rem 0 1rem 0;
           & > a {
-            color: var(--color-primary);
+            color: var(--color-white);
             text-decoration: none;
             font-size: 1.2rem;
+            &:hover {
+              color: var(--color-highlight);
+            }
           }
         }
       }
@@ -80,10 +87,17 @@
 
   &-logo {
     text-align: center;
+    width: 15rem;
+    margin: 0 auto;
+    & img {
+      width: 100%;
+    }
   }
   &-copy {
-    background-color: var(--color-primary);
-    color: #fff;
+    margin-top: 1rem;
+    background-color: var(--color-highlight);
+    color: var(--color-primary-dark);
+    font-weight: 600;
     font-size: 1.2rem;
     display: flex;
     justify-content: space-between;

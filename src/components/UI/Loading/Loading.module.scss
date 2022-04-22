@@ -1,7 +1,7 @@
 .checkoutLoading {
   width: 100%;
   height: 100vh;
-  background: var(--color-white);
+  background: var(--color-primary);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,7 +18,7 @@
 
   & > svg {
     font-size: 3rem;
-    color: var(--color-grey-2);
+    color: var(--color-highlight);
 
     @media only screen and (max-width: 75em) {
       font-size: 5rem;

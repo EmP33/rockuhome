@@ -109,7 +109,7 @@ const Navbar = () => {
             className={classes["search-bar"]}
             variant="outlined"
             onChange={changeInputHandler}
-            inputProps={{ style: { color: "#f7ccac" } }}
+            inputProps={{ style: { color: "#fff" } }}
           />
           <button className={classes.button} type="submit">
             <ImSearch className={classes.searchIcon} />

@@ -75,11 +75,13 @@ const CardMethod = ({ handleBack, handleNext }) => {
                   style={{
                     padding: "1rem 2rem 1rem 2rem",
                     border: "none",
-                    background: "var(--color-grey-4)",
-                    color: "#fff",
+                    background: "var(--color-primary)",
+                    color: "var(--color-highlight)",
                     width: "15rem",
                     cursor: "pointer",
-                    borderRadius: ".5rem",
+                    borderRadius: "3px",
+                    fontSize: "1rem",
+                    fontWeight: "bold",
                   }}
                   variant="outlined"
                   onClick={handleBack}
@@ -91,11 +93,13 @@ const CardMethod = ({ handleBack, handleNext }) => {
                   style={{
                     padding: "1rem 2rem 1rem 2rem",
                     border: "none",
-                    background: "var(--color-grey-4)",
-                    color: "#fff",
+                    background: "var(--color-primary)",
+                    color: "var(--color-highlight)",
                     width: "15rem",
                     cursor: "pointer",
-                    borderRadius: ".5rem",
+                    borderRadius: "3px",
+                    fontSize: "1rem",
+                    fontWeight: "bold",
                   }}
                   disabled={!stripe}
                 >

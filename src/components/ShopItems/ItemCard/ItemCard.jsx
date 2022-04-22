@@ -106,6 +106,9 @@ const ItemCard = ({ product }) => {
           }
         </div>
         <div styleName="card-content">
+          <Link to={detailsPath}>
+            <h3>{product.name}</h3>
+          </Link>
           <span styleName="price">{product.price.formatted_with_code} </span>
           {/* <div styleName={classes["discount-wrapper"]}>
             <span styleName={classes["discount-price"]}>
@@ -113,9 +116,6 @@ const ItemCard = ({ product }) => {
             </span>{" "}
             <span styleName={classes["discount-badge"]}>-10%</span>
           </div> */}
-          <Link to={detailsPath}>
-            <h3>{product.name}</h3>
-          </Link>
         </div>
       </div>
     </React.Fragment>

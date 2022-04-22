@@ -1,12 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&display=swap");
 
 :root {
-  --color-primary: #3a3845;
-  --color-secondary: #f7ccac;
-  --color-highlight: #c69b7b;
-  --color-tertiary: #826f66;
+  --color-primary: #383838;
+  --color-secondary: #066163;
+  --color-highlight: #cdbe78;
+  --color-tertiary: #f2f2f2;
+
+  --color-primary-light: #434343;
+  --color-primary-dark: #2d2d2d;
+
+  --color-secondary-light: #077477;
+  --color-secondary-dark: #054e4f;
+
+  --color-highlight-light: #f6e490;
+  --color-highlight-dark: #a49860;
+
+  --color-tertiary-light: #ffffff;
+  --color-tertiary-dark: #c2c2c2;
 
   --color-light-blue-1: #bbe1fa;
 
@@ -18,7 +30,7 @@
 
   --color-white: #fff;
 
-  --border-details: 1px solid var(--color-primary);
+  --border-details: 1px solid var(--color-highlight-dark);
   --border-intro: 3px solid var(--color-primary);
 
   --font-primary: "Open Sans", sans-serif;
@@ -42,7 +54,7 @@ body {
   margin: 0;
   font-weight: 300;
   font-size: 62.5%; // 1rem - 10px
-  background-color: rgb(241, 241, 241);
+  background-color: var(--color-tertiary);
   scroll-behavior: smooth;
 
   @media only screen and (min-width: 75em) {

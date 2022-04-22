@@ -3,7 +3,7 @@
   margin-top: 2rem;
   height: 80%;
   position: relative;
-  background: var(--color-white);
+  background: var(--color-tertiary);
   border-radius: 2.5rem;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -21,7 +21,7 @@
 
   .order-section {
     padding: 1rem 2rem 2rem 2rem;
-    background: var(--color-white);
+    background: var(--color-tertiary);
     color: var(--color-primary);
     border-radius: 2.5rem 0 0 2.5rem;
     display: grid;
@@ -55,7 +55,10 @@
       }
 
       &-logo {
-        max-width: 25rem;
+        max-width: 20rem;
+        & > img {
+          width: 100%;
+        }
       }
     }
 
@@ -114,7 +117,7 @@
     border-radius: 0 2.5rem 2.5rem 0;
     padding: 2rem;
     background: var(--color-primary);
-    color: var(--color-white);
+    color: var(--color-highlight);
     display: grid;
     align-items: flex-start;
 
@@ -135,6 +138,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-row-gap: 1.2rem;
+      font-family: var(--font-header);
 
       @media only screen and (max-width: 87.5em) {
         padding: 0rem;
@@ -144,7 +148,8 @@
         font-size: 2.3rem;
         font-weight: 400;
         margin: 0;
-        padding: 1rem;
+        padding: 1rem 0;
+
         border-bottom: 1px solid #646464;
         grid-column: 1/-1;
 
@@ -180,13 +185,17 @@
       & button {
         grid-column: 1/-1;
         padding: 1rem 2rem 1rem 2rem;
-        background: var(--color-tertiary);
-        color: var(--color-white);
+        background: var(--color-primary-dark);
+        color: var(--color-highlight);
         font-size: 1.4rem;
         text-align: center;
         font-weight: bold;
         border: none;
         cursor: pointer;
+
+        &:hover {
+          background-color: var(--color-primary-light);
+        }
 
         &:disabled {
           background: rgba(61, 61, 61, 0.5);

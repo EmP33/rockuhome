@@ -3,13 +3,13 @@ import classes from "./Loading.module.scss";
 
 import logo from "../../../assets/logo.png";
 
-import { RiLoader3Fill } from "react-icons/ri";
+import { DotWave } from "@uiball/loaders";
 
 const Loading = () => {
   return (
     <div className={classes.checkoutLoading}>
       <img src={logo} alt="logo" />
-      <RiLoader3Fill className="spinning" />
+      <DotWave size={47} speed={1} color="#cdbe78" className="spinning" />;
     </div>
   );
 };

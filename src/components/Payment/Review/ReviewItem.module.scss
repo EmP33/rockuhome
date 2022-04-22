@@ -3,6 +3,9 @@
   display: grid;
   margin: 1rem 0;
   grid-template-columns: 30% 70%;
+  background-color: var(--color-tertiary);
+  color: var(--color-primary-dark);
+  border-radius: 5px;
 
   @media only screen and (max-width: 62.5em) {
     grid-template-columns: 15% 85%;
@@ -10,15 +13,17 @@
 
   & > img {
     width: 100%;
+    border-radius: 5px;
   }
 
   &__description {
     padding: 0.5rem;
+    color: var(--color-primary-dark);
 
     & > h5 {
       margin: 0 0 0.5rem;
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: bold;
 
       @media only screen and (max-width: 75em) {
         font-size: 1.2rem;
@@ -28,7 +33,7 @@
     & > p {
       margin: 0.1rem 0;
       font-size: 1rem;
-      color: var(--color-grey-1);
+      color: var(--color-primary-light);
 
       @media only screen and (max-width: 75em) {
         font-size: 1.1rem;

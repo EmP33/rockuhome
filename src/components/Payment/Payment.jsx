@@ -18,7 +18,8 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 
 // ICONS
-import { BsBag } from "react-icons/bs";
+
+import { RiShoppingCartFill } from "react-icons/ri";
 
 // OTHER
 import { commerce } from "../../lib/commerce";
@@ -94,7 +95,7 @@ const Cart = () => {
           <div styleName="cart-wrapper">
             <Link to="/cart">
               <span>{cart.total_items}</span>
-              <BsBag styleName="cartIcon" />
+              <RiShoppingCartFill styleName="cartIcon" />
             </Link>
           </div>
         )}
@@ -108,7 +109,20 @@ const Cart = () => {
               <div styleName="content-section__form-wrapper">
                 <Stepper activeStep={activeStep} styleName="stepper">
                   {steps.map((step) => (
-                    <Step key={step}>
+                    <Step
+                      key={step}
+                      sx={{
+                        "& .MuiStepLabel-root .Mui-completed": {
+                          color: "#383838", // circle color (COMPLETED)
+                        },
+                        "& .MuiStepLabel-root .Mui-active": {
+                          color: "#383838", // circle color (ACTIVE)
+                        },
+                        "& .MuiStepLabel-root .Mui-active .MuiStepIcon-text": {
+                          fill: "#cdbe78", // circle's number (ACTIVE)
+                        },
+                      }}
+                    >
                       <StepLabel styleName="step-label">{step}</StepLabel>
                     </Step>
                   ))}

@@ -5,13 +5,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-primary-dark);
 
   @media only screen and (max-width: 37.5em) {
     padding: 0 1rem;
   }
 
   &__header-logo {
-    max-width: 15rem;
+    max-width: 20rem;
+
+    & > img {
+      width: 100%;
+    }
 
     @media only screen and (max-width: 75em) {
       max-width: 20rem;
@@ -24,18 +29,25 @@
 
     & span {
       font-weight: bold;
-      color: var(--color-grey-4);
-      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-primary);
+      color: var(--color-highlight);
+      font-size: 1rem;
       position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-55%, -50%);
+      width: 1.4rem;
+      height: 1.4rem;
+      border: 1px solid var(--color-primary-light);
+      top: -20%;
+      right: -30%;
+      border-radius: 50%;
     }
 
     .cartIcon {
       width: 2.5rem;
       height: 2.5rem;
-      color: var(--color-primary);
+      color: var(--color-highlight);
       border-radius: 2px;
     }
     @media only screen and (max-width: 37.5em) {
@@ -57,7 +69,6 @@
   display: grid;
   grid-template-columns: 70% 30%;
   position: relative;
-  background: var(--color-white);
 
   @media only screen and (max-width: 75em) {
     width: 80%;
@@ -77,8 +88,9 @@
   .content-section {
     padding: 1rem 2rem 2rem 2rem;
     margin-right: 1rem;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-grey-3);
+    background-color: var(--color-tertiary-light);
+    border: 2px solid var(--color-highlight);
+    border-radius: 5px;
 
     @media only screen and (max-width: 62.5em) {
       margin-top: 2rem;
@@ -103,11 +115,10 @@
 
       & > h2 {
         text-align: center;
-        font-family: var(--font-header);
         font-weight: bold;
         font-size: 1.6rem;
         margin: 2rem 0;
-        color: var(--color-grey-2);
+        color: var(--color-primary);
         grid-row: 2/3;
       }
     }
@@ -121,7 +132,9 @@
     }
   }
   .review-section {
-    border: 1px solid var(--color-grey-3);
+    border: 2px solid var(--color-highlight);
+    background: var(--color-primary);
+    color: var(--color-highlight);
 
     @media only screen and (max-width: 62.5em) {
       grid-row: 1/2;
