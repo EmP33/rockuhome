@@ -50,7 +50,7 @@ const Navbar = () => {
   const cart = useSelector((state) => state.user.cart);
   const sendingStatus = useSelector((state) => state.user.sendingStatus);
   const [category, setCategory] = useState(
-    categories[categories.length - 1].slug
+    categories[categories?.length - 1].slug
   );
   const [searchInput, setSearchInput] = useState("");
 

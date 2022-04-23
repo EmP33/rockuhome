@@ -5,7 +5,7 @@ import styles from "./IntroElement.module.scss";
 
 const IntroElement = ({ image, title, link }) => {
   return (
-    <Link to="/">
+    <Link to={`/category/${link}`}>
       <div styleName="navigation__element">
         <img src={image} alt="By Minh Pham on Unsplash" />
         <div styleName="navigation__element__content">

@@ -9,8 +9,7 @@ import {
   IoHeart,
   IoCheckmarkOutline,
 } from "react-icons/io5";
-import { RiLoader3Fill } from "react-icons/ri";
-import { BsBag } from "react-icons/bs";
+import { RiShoppingCartFill, RiLoader3Fill } from "react-icons/ri";
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -81,13 +80,13 @@ const ItemCard = ({ product }) => {
               <button onClick={addCartDataHandler} disabled>
                 {sendingStatus && <RiLoader3Fill className="spinning" />}
                 {isInCart && !sendingStatus && <IoCheckmarkOutline />}
-                {!isInCart && !sendingStatus && <BsBag />}
+                {!isInCart && !sendingStatus && <RiShoppingCartFill />}
               </button>
             ) : (
               <button onClick={addCartDataHandler}>
                 {sendingStatus && <RiLoader3Fill className="spinning" />}
                 {isInCart && !sendingStatus && <IoCheckmarkOutline />}
-                {!isInCart && !sendingStatus && <BsBag />}
+                {!isInCart && !sendingStatus && <RiShoppingCartFill />}
               </button>
             )}
             <button onClick={addFavoriteHandler}>

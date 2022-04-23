@@ -76,7 +76,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/" element={<Navigate to="/intro" />} />
         <Route path="/home/*" element={<Main />}>
           <Route path={`product/:productID`} element={<ProductDetailPage />} />
         </Route>

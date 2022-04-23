@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import classes from "./CartItem.module.scss";
 import CSSModules from "react-css-modules";
 
@@ -7,30 +7,49 @@ import { IoCloseOutline } from "react-icons/io5";
 import { RiLoader3Fill } from "react-icons/ri";
 
 import { useDispatch } from "react-redux";
-import { updateCartData, removeFromCartData } from "../../../store/userSlice";
+
+import { userActions } from "../../../store/userSlice";
 import { Link } from "react-router-dom";
+
+import useHttp from "../../../hooks/use-http";
+import { removeProductCart, updateProductCart } from "../../../lib/api";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
-  const [removeStatus, setRemoveStatus] = useState(false);
-  const [updateStatus, setUpdateStatus] = useState(false);
 
-  const itemClass = `${removeStatus || updateStatus ? "item-active" : "item"}`;
+  const {
+    sendRequest: sendRemoveReq,
+    status: removeStatus,
+    data: cart,
+  } = useHttp(removeProductCart);
+
+  const {
+    sendRequest: sendUpdateReq,
+    status: updateStatus,
+    data: updatedCart,
+  } = useHttp(updateProductCart);
+
+  const itemClass = `${
+    removeStatus || updateStatus === "pending" ? "item-active" : "item"
+  }`;
 
   const removeItemHandler = () => {
-    setRemoveStatus(true);
-    dispatch(removeFromCartData(item.id));
-    return setTimeout(() => {
-      setRemoveStatus(false);
-    }, 1250);
+    sendRemoveReq(item.id);
   };
   const changeQtyHandler = (value) => {
-    setUpdateStatus(true);
-    dispatch(updateCartData(item.id, value));
-    return setTimeout(() => {
-      setUpdateStatus(false);
-    }, 1250);
+    sendUpdateReq(item.id, value);
   };
+
+  useEffect(() => {
+    if (removeStatus === "completed") {
+      dispatch(userActions.setCart(cart));
+    }
+  }, [removeStatus, cart, dispatch]);
+  useEffect(() => {
+    if (updateStatus === "completed") {
+      dispatch(userActions.setCart(updatedCart));
+    }
+  }, [updateStatus, updatedCart, dispatch]);
 
   return (
     <div styleName={itemClass}>
@@ -48,7 +67,7 @@ const CartItem = ({ item }) => {
         <span>
           {" "}
           {/* Conditional render on button element to prevent span clicks */}
-          {updateStatus ? (
+          {updateStatus === "pending" ? (
             <button
               onClick={() => changeQtyHandler(item.quantity - 1)}
               disabled
@@ -60,14 +79,18 @@ const CartItem = ({ item }) => {
               <HiOutlineMinusSm />
             </button>
           )}
-          {!updateStatus && <span>{item.quantity}</span>}
-          {updateStatus && (
+          {!updateStatus || updateStatus === "completed" ? (
+            <span>{item.quantity}</span>
+          ) : (
+            ""
+          )}
+          {updateStatus === "pending" && (
             <span>
               <RiLoader3Fill className="spinning" />
             </span>
-          )}{" "}
+          )}
           {/* Conditional render on button element to prevent span clicks */}
-          {updateStatus ? (
+          {updateStatus === "pending" ? (
             <button
               onClick={() => changeQtyHandler(item.quantity + 1)}
               disabled
@@ -81,7 +104,7 @@ const CartItem = ({ item }) => {
           )}
         </span>
       </div>
-      <span styleName={"itemPrice"}>{item.price.raw} zł</span>
+      <span styleName={"itemPrice"}>{item.price.formatted_with_code}</span>
       <div styleName={"itemRemoveDiv"}>
         {/* Conditional render on button element to prevent span clicks */}
         {removeStatus ? (

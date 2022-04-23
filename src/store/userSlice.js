@@ -70,25 +70,25 @@ export const addCartData = (productId, quantity, options = {}) => {
   };
 };
 
-export const updateCartData = (productId, quantity) => {
-  return async (dispatch) => {
-    const sendRequest = async () => {
-      const { cart } = await commerce.cart.update(productId, { quantity });
-      dispatch(userActions.setCart(cart));
-    };
-    await sendRequest();
-  };
-};
+// export const updateCartData = (productId, quantity) => {
+//   return async (dispatch) => {
+//     const sendRequest = async () => {
+//       const { cart } = await commerce.cart.update(productId, { quantity });
+//       dispatch(userActions.setCart(cart));
+//     };
+//     await sendRequest();
+//   };
+// };
 
-export const removeFromCartData = (productId) => {
-  return async (dispatch) => {
-    const sendRequest = async () => {
-      const { cart } = await commerce.cart.remove(productId);
-      dispatch(userActions.setCart(cart));
-    };
-    await sendRequest();
-  };
-};
+// export const removeFromCartData = (productId) => {
+//   return async (dispatch) => {
+//     const sendRequest = async () => {
+//       const { cart } = await commerce.cart.remove(productId);
+//       dispatch(userActions.setCart(cart));
+//     };
+//     await sendRequest();
+//   };
+// };
 
 export const handleCaptureCheckout = (checkoutTokenId, newOrder) => {
   return async (dispatch) => {

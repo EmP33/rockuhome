@@ -4,10 +4,13 @@
   padding: 1rem;
   border-radius: 1rem;
 
-  @media only screen and (max-width: 25em) {
+  @media only screen and (max-width: 37.5em) {
     margin: 0;
+    padding: 0;
+  }
+
+  @media only screen and (max-width: 25em) {
     border-radius: none;
-    padding: 0.5rem;
   }
   &-header {
     background: var(--color-highlight);
