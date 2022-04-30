@@ -76,8 +76,8 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/intro" />} />
-        <Route path="/home/*" element={<Main />}>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home/*" element={<IntroPage />}>
           <Route path={`product/:productID`} element={<ProductDetailPage />} />
         </Route>
         <Route path="/cart/*" element={<CartPage />}>
@@ -106,7 +106,7 @@ const App = () => {
           <Route path={`regulations`} element={<RegulationsPage />} />
           <Route path={`contact`} element={<ContactPage />} />
         </Route>
-        <Route path="/intro" element={<IntroPage />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

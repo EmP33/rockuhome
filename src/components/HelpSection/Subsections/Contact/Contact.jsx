@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import CSSModules from "react-css-modules";
 import styles from "./Contact.module.scss";
 
+import logo from "../../../../assets/logo.png";
+
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 import { Outlet } from "react-router-dom";
@@ -49,11 +51,13 @@ const Contact = () => {
     <>
       <Outlet />
       <section styleName="contact">
-        <h1>Kontakt</h1>
+        <div styleName="contact__header">
+          <img src={logo} alt="rockuhome" />
+          <h1>Contact Us</h1>
+        </div>
         <div>
           <form ref={form} onSubmit={sendEmailHandler}>
             <div>
-              <label htmlFor="name">Imię*</label>
               {sendingStatus === "sending" ? (
                 <input type="text" id="name" name="name" required disabled />
               ) : (
@@ -62,13 +66,12 @@ const Contact = () => {
                   id="name"
                   name="name"
                   required
-                  placeholder="Wprowadź imię"
+                  placeholder="Name"
                   ref={nameRef}
                 />
               )}
             </div>
             <div>
-              <label htmlFor="email">E-mail*</label>
               {sendingStatus === "sending" ? (
                 <input type="email" id="email" name="email" required disabled />
               ) : (
@@ -76,17 +79,16 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Wprowadź e-mail"
+                  placeholder="Email"
                   ref={emailRef}
                 />
               )}
             </div>
             <div>
-              <label htmlFor="message">Wiadomość*</label>
               {sendingStatus === "sending" ? (
                 <textarea
                   id="message"
-                  rows="10"
+                  rows="7"
                   name="message"
                   required
                   disabled
@@ -94,10 +96,10 @@ const Contact = () => {
               ) : (
                 <textarea
                   id="message"
-                  rows="10"
+                  rows="7"
                   name="message"
                   required
-                  placeholder="Wprowadź wiadomość"
+                  placeholder="Message"
                   ref={messageRef}
                 ></textarea>
               )}

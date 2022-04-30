@@ -30,7 +30,7 @@ const Cart = () => {
       <div className={classes.cart}>
         <section className={classes["order-section"]}>
           <div className={classes["order-section__header"]}>
-            <Link to="/home" className={classes["order-section__header-logo"]}>
+            <Link to="/" className={classes["order-section__header-logo"]}>
               <img src={logo} alt="Logo" />
             </Link>
             <h2>{t("your_orders")}</h2>
@@ -48,7 +48,7 @@ const Cart = () => {
             )}
           </div>
           <div className={classes["order-section__footer"]}>
-            <button onClick={() => navigate("/home")}>
+            <button onClick={() => navigate("/")}>
               <BsArrowLeft className={classes["backIcon"]} />
               {t("back_to_shop")}
             </button>

@@ -1,5 +1,6 @@
 import React from "react";
-import classes from "./HelpSection.module.scss";
+import CSSModules from "react-css-modules";
+import styles from "./HelpSection.module.scss";
 
 import { useTranslation } from "react-i18next";
 
@@ -22,13 +23,13 @@ const HelpSection = () => {
   return (
     <>
       <Outlet />
-      <main className={classes["main"]}>
-        <section className={classes["main-header"]}>
+      <main styleName="main">
+        <section styleName="main-header">
           <h1>{t("web_help_center")}</h1>
         </section>
-        <section className={classes["main-help"]}>
-          <div className={classes["main-help__block"]}>
-            <IoPersonOutline className={classes["block-icon"]} />
+        <section styleName="main-help">
+          <div styleName="main-help__block">
+            <IoPersonOutline styleName="block-icon" />
             <div>
               <h2>{t("users")}</h2>
               <ul>
@@ -38,8 +39,8 @@ const HelpSection = () => {
               </ul>
             </div>
           </div>
-          <div className={classes["main-help__block"]}>
-            <IoHomeOutline className={classes["block-icon"]} />
+          <div styleName="main-help__block">
+            <IoHomeOutline styleName="block-icon" />
             <div>
               <h2>{t("delivery_and_payment")}</h2>
               <ul>
@@ -52,8 +53,8 @@ const HelpSection = () => {
               </ul>
             </div>
           </div>
-          <div className={classes["main-help__block"]}>
-            <IoClipboardOutline className={classes["block-icon"]} />
+          <div styleName="main-help__block">
+            <IoClipboardOutline styleName="block-icon" />
             <div>
               <h2>{t("regulations_and_contact")}</h2>
               <ul>
@@ -72,4 +73,4 @@ const HelpSection = () => {
   );
 };
 
-export default HelpSection;
+export default CSSModules(HelpSection, styles);

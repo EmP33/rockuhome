@@ -11,7 +11,7 @@ const Confirmation = () => {
   const user = useSelector((state) => state.user.shippingData);
 
   const navigateToHome = () => {
-    navigate("/home", { replace: true });
+    navigate("/", { replace: true });
   };
 
   return (

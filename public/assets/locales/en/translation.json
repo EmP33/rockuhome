@@ -20,7 +20,7 @@
   "enter_gift_code": "Enter gift code",
   "total_price": "Total price",
   "go_to_checkout": "Go to checkout",
-  "web_help_center": "GrooveFinds Help Center",
+  "web_help_center": "RockUHome Help Center",
   "users": "Users",
   "delivery_and_payment": "Delivery and Payment",
   "order_processing": "Order processing and delivery",
@@ -71,5 +71,7 @@
   "pay": "Pay",
   "back": "Back",
   "incorrect-entry": "Incorrect entry",
-  "cart-is-empty": "Your cart is empty"
+  "cart-is-empty": "Your cart is empty",
+  "below-25": "below $25",
+  "above-125": "above $125"
 }

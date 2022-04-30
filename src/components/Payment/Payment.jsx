@@ -75,7 +75,7 @@ const Cart = () => {
   };
 
   if (!cart.total_items) {
-    navigate("/home", { replace: true });
+    navigate("/", { replace: true });
   }
 
   if (loadingNextStep || !checkoutToken) {
@@ -86,7 +86,7 @@ const Cart = () => {
     <PaymentBackdrop>
       <Outlet />
       <div styleName="payment-navbar">
-        <Link to="/home" styleName="payment-navbar__header-logo">
+        <Link to="/" styleName="payment-navbar__header-logo">
           <img src={logo} alt="Logo" />
         </Link>
         {activeStep === 2 ? (

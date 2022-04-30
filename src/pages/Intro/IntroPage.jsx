@@ -2,11 +2,14 @@ import React from "react";
 import CSSModules from "react-css-modules";
 import styles from "./IntroPage.module.scss";
 
-import images from "../../constants/images.js";
 import logo from "../../assets/logo.png";
 import IntroElement from "../../components/IntroElement/IntroElement";
+import { useSelector } from "react-redux";
 
 const IntroPage = () => {
+  const categories = useSelector((state) => state.products.categories);
+  const filteredCategories = categories.slice(1, 9).reverse();
+
   return (
     <div styleName="wrapper">
       <div styleName="intro">
@@ -24,7 +27,14 @@ const IntroPage = () => {
           <h2 styleName="header">CHOOSE A ROOM</h2>
         </div>
         <section styleName="navigation">
-          <IntroElement title="Bedroom" image={images.bedroom} link="bedroom" />
+          {filteredCategories.map((category) => (
+            <IntroElement
+              title={category.name}
+              image={category?.assets[0]?.url}
+              link={category.slug}
+            />
+          ))}
+          {/* <IntroElement title="Bedroom" image={images.bedroom} link="bedroom" />
           <IntroElement title="Kitchen" image={images.kitchen} link="kitchen" />
           <IntroElement
             title="Living Room"
@@ -35,7 +45,7 @@ const IntroPage = () => {
             title="Dining Room"
             image={images.dining_room}
             link="dining-room"
-          />{" "}
+          />
           <IntroElement title="Office" image={images.office} link="office" />
           <IntroElement title="Hall" image={images.hall} link="hall" />
           <IntroElement
@@ -43,7 +53,7 @@ const IntroPage = () => {
             image={images.bathroom}
             link="bathroom"
           />
-          <IntroElement title="Garage" image={images.garage} link="garage" />
+          <IntroElement title="Garage" image={images.garage} link="garage" /> */}
         </section>
       </div>
     </div>

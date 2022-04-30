@@ -20,7 +20,7 @@
   "enter_gift_code": "Wpisz kod podarunkowy",
   "total_price": "Cena całkowita",
   "go_to_checkout": "Przejdź do płatności",
-  "web_help_center": "Centrum Pomocy GrooveFinds",
+  "web_help_center": "Centrum Pomocy RockUHome",
   "users": "Użytkownicy",
   "delivery_and_payment": "Dostawa i płatności",
   "order_processing": "Realizacja zamówień i dostawa",
@@ -70,5 +70,7 @@
   "pay": "Zapłać",
   "back": "Cofnij",
   "incorrect-entry": "Niepoprawne dane",
-  "cart-is-empty": "Twój koszyk jest pusty"
+  "cart-is-empty": "Twój koszyk jest pusty",
+  "below-25": "poniżej $25",
+  "above-125": "powyżej $125"
 }

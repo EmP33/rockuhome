@@ -9,8 +9,7 @@ import {
   IoClose,
   IoCheckmarkOutline,
 } from "react-icons/io5";
-import { RiLoader3Fill } from "react-icons/ri";
-import { BsBag } from "react-icons/bs";
+import { RiLoader3Fill, RiShoppingCartFill } from "react-icons/ri";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -164,7 +163,7 @@ const ProductDetail = () => {
                     <RiLoader3Fill className={classes.spinning} disabled />
                   )}
                   {isInCart && !sendingStatus && <IoCheckmarkOutline />}
-                  {!isInCart && !sendingStatus && <BsBag />}
+                  {!isInCart && !sendingStatus && <RiShoppingCartFill />}
                 </button>
               )}
             </div>

@@ -25,11 +25,11 @@ const Review = () => {
           <h3>{t("in-your-basket")}</h3>
           <button onClick={showReviewHandler}>
             <IoChevronDownOutline
-              styleName={showReview && `review-header__icon`}
+              styleName={!showReview && `review-header__icon`}
             />
           </button>
         </div>
-        <div styleName={!showReview && `review-total`}>
+        <div styleName={showReview && `review-total`}>
           <div styleName="result">
             <p>
               {t("products-price")}:

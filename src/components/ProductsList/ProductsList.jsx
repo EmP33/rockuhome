@@ -1,6 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import CSSModules from "react-css-modules";
+import styles from "./ProductsList.module.scss";
 import { useTranslation } from "react-i18next";
-import classes from "./ProductsList.module.scss";
 
 import ItemCard from "../ShopItems/ItemCard/ItemCard";
 import Nothing from "./Nothing/Nothing";
@@ -15,6 +16,8 @@ import { useParams, Outlet, useNavigate, useLocation } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
+import { AiFillFilter } from "react-icons/ai";
+
 const ProductsList = () => {
   const { t } = useTranslation();
   const params = useParams();
@@ -25,6 +28,7 @@ const ProductsList = () => {
   const priceTo = useRef();
 
   const [price, setPrice] = useState("");
+  const [showFilters, setShowFilters] = useState(false);
   const category = useSelector((state) =>
     state.products.categories.find(
       (product) => product.slug === params.categoryID
@@ -40,6 +44,11 @@ const ProductsList = () => {
   const categoryProducts = products.filter((product) =>
     product.categories.find((category) => category.slug === params.categoryID)
   );
+
+  useEffect(() => {
+    console.log(window);
+    window.scrollTo(0, 0);
+  }, []);
 
   // Filter logic
   let filteredProducts = [];
@@ -137,6 +146,10 @@ const ProductsList = () => {
     }
   };
 
+  const showFiltersHandler = () => {
+    setShowFilters((prevState) => !prevState);
+  };
+
   const handleChange = (event) => {
     const price = event.target.value;
     setPrice(price);
@@ -163,23 +176,34 @@ const ProductsList = () => {
   };
 
   return (
-    <main className={classes.main}>
+    <main className="main">
       <Outlet />
-      <article className={classes["products"]}>
-        <div className={classes["products-header"]}>
+      <article styleName="products">
+        <div styleName="products-header">
           <h1>
             {params.searchInput
               ? `${t("search_results")}: ${params.searchInput}`
               : t(`${category.slug}`)}
           </h1>
-          <div className={classes["products-filters"]}>
+          <button
+            styleName="products-header__filter-btn"
+            onClick={showFiltersHandler}
+          >
+            <AiFillFilter />
+          </button>
+
+          <div
+            styleName={
+              showFilters ? "products-filters--active" : "products-filters"
+            }
+          >
             <form onSubmit={submitPriceHandler}>
-              <div className={classes["products-filters__price"]}>
+              <div styleName="products-filters__price">
                 <h5>{t("price")}</h5>
 
                 <FormControl size="small">
                   <InputLabel
-                    className={classes["select-label"]}
+                    styleName="select-label"
                     id="demo-simple-select-label"
                   >
                     {t("price")}
@@ -190,16 +214,16 @@ const ProductsList = () => {
                     value={price}
                     label="Price"
                     onChange={handleChange}
-                    className={classes["select-price"]}
+                    styleName="select-price"
                   >
-                    <MenuItem value={0}>poniżej 25 zł</MenuItem>
-                    <MenuItem value={25}>25 zł - 60 zł</MenuItem>
-                    <MenuItem value={60}>60 zł - 90 zł</MenuItem>
-                    <MenuItem value={90}>90 zł - 125 zł</MenuItem>
-                    <MenuItem value={125}>powyżej 125</MenuItem>
+                    <MenuItem value={0}>{t("below-25")}</MenuItem>
+                    <MenuItem value={25}>$25 - $60</MenuItem>
+                    <MenuItem value={60}>$60 - $90</MenuItem>
+                    <MenuItem value={90}>$90 - $125</MenuItem>
+                    <MenuItem value={125}>{t("above-125")}</MenuItem>
                   </Select>
                 </FormControl>
-                <span className={classes.priceDivider}>{t("or")}</span>
+                <span styleName="priceDivider">{t("or")}</span>
                 <section>
                   <input
                     type="number"
@@ -222,7 +246,7 @@ const ProductsList = () => {
             </form>
           </div>
         </div>
-        <section className={classes["products-list"]}>
+        <section styleName="products-list">
           {params.searchInput ? (
             searchedProducts.length ? (
               searchedProducts.map((item) => (
@@ -257,4 +281,4 @@ const ProductsList = () => {
   );
 };
 
-export default ProductsList;
+export default CSSModules(ProductsList, styles);
