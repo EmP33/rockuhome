@@ -15,20 +15,42 @@
   &-header {
     background: var(--color-highlight);
     color: var(--color-primary-dark);
+    height: 5.5rem;
     border-radius: 0.5rem;
+
+    @media only screen and (max-width: 37.5em) {
+      text-align: center;
+      border-radius: 0;
+      display: grid;
+      grid-template-columns: max-content 1fr max-content;
+    }
 
     & > h1 {
       font-size: 2.5rem;
       margin: 0;
       padding: 1rem;
+      grid-column: 1/2;
     }
 
-    @media only screen and (max-width: 37.5em) {
-      text-align: center;
+    &__filter-btn {
+      border: none;
+      background: none;
+      color: var(--color-primary);
+      font-size: 2.6rem;
+      grid-column: -1/-2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1rem;
+
+      @media only screen and (min-width: 37.5em) {
+        display: none;
+      }
     }
   }
 
-  &-filters {
+  @mixin filters-mixin($scale, $margin) {
+    transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -36,6 +58,11 @@
     padding: 0.5rem;
     background: var(--color-primary-dark);
     color: var(--color-tertiary);
+    grid-column: 1/-1;
+    transform: scaleY($scale);
+    transform-origin: top;
+    z-index: 10;
+    box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.5);
 
     @media only screen and (max-width: 37.5em) {
       justify-content: center;
@@ -126,6 +153,13 @@
         }
       }
     }
+  }
+
+  &-filters {
+    @include filters-mixin(0, 0);
+  }
+  &-filters--active {
+    @include filters-mixin(100%, 2rem);
   }
 
   &-list {

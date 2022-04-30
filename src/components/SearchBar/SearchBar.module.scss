@@ -1,0 +1,65 @@
+.header-search {
+  justify-self: stretch;
+  margin: 0 4rem;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  position: relative;
+  outline: none;
+
+  @media only screen and (max-width: 62.5em) {
+    margin: 0 0.5rem;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    display: none;
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    margin: 1rem 2rem 0;
+  }
+
+
+
+  .select {
+    width: 15rem;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-primary);
+
+    & div {
+      color: var(--color-white);
+    }
+    & svg {
+      color: var(--color-white);
+    }
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    outline: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    right: 0;
+    outline: none;
+
+    & .searchIcon {
+      width: 1.8rem;
+      height: 1.8rem;
+      cursor: pointer;
+      color: var(--color-white);
+    }
+  }
+}

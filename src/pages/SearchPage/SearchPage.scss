@@ -1,0 +1,93 @@
+.search-page {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: #383838, $alpha: 0.99);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+
+  @media only screen and (min-width: 37.5em) {
+    display: none;
+  }
+
+  & > img {
+    margin: 1rem auto;
+    width: 20rem;
+  }
+
+  .header-search {
+    justify-self: stretch;
+    margin: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    position: relative;
+    outline: none;
+    width: 90%;
+
+    @media only screen and (max-width: 25em) {
+      width: 98%;
+    }
+
+    .select {
+      width: 15rem;
+      margin: 0;
+      padding: 0;
+      background-color: var(--color-highlight);
+
+      & div {
+        color: var(--color-primary);
+        font-size: 1.6rem;
+      }
+      & svg {
+        color: var(--color-primary);
+        font-size: 1.6rem;
+      }
+    }
+
+    .search-bar {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: var(--color-highlight);
+      outline: none;
+      position: relative;
+    }
+
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      right: 1rem;
+      outline: none;
+
+      & .searchIcon {
+        width: 1.8rem;
+        height: 1.8rem;
+        cursor: pointer;
+        color: var(--color-primary);
+      }
+    }
+  }
+}
+.toggle-button {
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+
+  .closeIcon {
+    color: var(--color-highlight);
+    font-size: 2em;
+  }
+}

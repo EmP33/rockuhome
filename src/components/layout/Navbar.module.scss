@@ -99,17 +99,25 @@
     }
 
     .country-selector {
-      border: 2px solid var(--color-grey-2);
+      border: 1px solid var(--color-highlight);
+      color: var(--color-tertiary);
+      background-color: var(--color-primary);
       height: 2rem;
       text-align: center;
+      position: relative;
 
       @media only screen and (max-width: 37.5em) {
         height: 1.7rem;
         font-size: 1rem;
       }
-      // @media only screen and (max-width: 31.25em) {
-      //   display: none;
-      // }
+
+      & > svg {
+        color: var(--color-tertiary);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 }
@@ -124,8 +132,8 @@
 
   @media only screen and (max-width: 37.5em) {
     padding: 1rem 0;
-    grid-template-columns: max-content 1fr repeat(2, minmax(4rem, 8rem));
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: max-content 1fr repeat(3, minmax(4rem, 8rem));
+    grid-template-rows: 1fr;
   }
 
   &-logo {
@@ -140,69 +148,6 @@
 
     &:hover {
       background: var(--color-primary);
-    }
-  }
-
-  &-search {
-    justify-self: stretch;
-    margin: 0 4rem;
-    display: flex;
-    align-items: center;
-    height: 3rem;
-    position: relative;
-    outline: none;
-
-    @media only screen and (max-width: 62.5em) {
-      margin: 0 0.5rem;
-    }
-
-    @media only screen and (max-width: 37.5em) {
-      grid-row: 2/3;
-      grid-column: 1/-1;
-      margin: 0 2rem;
-    }
-
-    .select {
-      width: 15rem;
-      margin: 0;
-      padding: 0;
-      background-color: var(--color-primary);
-
-      & div {
-        color: var(--color-white);
-      }
-      & svg {
-        color: var(--color-white);
-      }
-    }
-
-    .search-bar {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      outline: none;
-    }
-
-    button {
-      background: none;
-      border: none;
-      outline: none;
-      width: 2.5rem;
-      height: 2.5rem;
-      display: grid;
-      place-items: center;
-      position: absolute;
-      right: 0;
-      outline: none;
-
-      & .searchIcon {
-        width: 1.8rem;
-        height: 1.8rem;
-        cursor: pointer;
-        color: var(--color-white);
-      }
     }
   }
 
@@ -235,7 +180,7 @@
       border-radius: 2px;
     }
     @media only screen and (max-width: 37.5em) {
-      grid-column: -2/-3;
+      grid-column: -3/-4;
     }
   }
 
@@ -249,7 +194,31 @@
       color: var(--color-highlight);
     }
     @media only screen and (max-width: 37.5em) {
+      grid-column: -2/-3;
+    }
+  }
+
+  .search-wrapper {
+    position: relative;
+
+    display: none;
+
+    @media only screen and (max-width: 37.5em) {
+      display: block;
       grid-column: -1/-2;
+    }
+
+    & > button {
+      border: none;
+      background-color: var(--color-primary-dark);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .searchIcon {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--color-highlight);
     }
   }
 }

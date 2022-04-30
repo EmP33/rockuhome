@@ -69,7 +69,9 @@ const WishList = () => {
                     <ItemCard product={product} key={product.id} />
                   ))
                 : ""}
-              {!wishlist.length && <h5>{t("nothing-there")}</h5>}
+              {!wishlist.length && (
+                <h5 style={{ padding: "2rem" }}>{t("nothing-there")}</h5>
+              )}
             </ul>
           </section>
         </div>
