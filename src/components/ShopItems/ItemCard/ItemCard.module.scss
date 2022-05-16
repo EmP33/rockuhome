@@ -254,12 +254,15 @@
       @media only screen and (max-width: 31.25em) {
         background: var(--color-primary-light);
         font-size: 1.5rem;
+
         padding: 1rem;
         position: absolute;
         width: 12.5rem;
         right: 0;
         bottom: 0;
+
         color: var(--color-highlight);
+
         font-weight: 600;
         border-radius: 3rem 0 0 0;
       }

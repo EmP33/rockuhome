@@ -27,6 +27,13 @@
       grid-template-columns: max-content 1fr max-content;
     }
 
+    @media only screen and (max-width: 37.5em) {
+      text-align: center;
+      border-radius: 0;
+      display: grid;
+      grid-template-columns: max-content 1fr max-content;
+    }
+
     & > h1 {
       font-size: 2.5rem;
       margin: 0;
@@ -61,10 +68,10 @@
     background: var(--color-primary-dark);
     color: var(--color-tertiary);
     grid-column: 1/-1;
+
     transform: scaleY(100%);
     transform-origin: top;
     z-index: 10;
-
     @media only screen and (max-width: 37.5em) {
       transform: scaleY($scale);
       justify-content: center;
