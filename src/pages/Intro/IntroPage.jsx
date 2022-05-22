@@ -6,12 +6,18 @@ import logo from "../../assets/logo.png";
 import IntroElement from "../../components/IntroElement/IntroElement";
 import { useSelector } from "react-redux";
 
+import { Helmet } from "react-helmet";
+
 const IntroPage = () => {
   const categories = useSelector((state) => state.products.categories);
   const filteredCategories = categories.slice(1, 9).reverse();
 
   return (
     <div styleName="wrapper">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>RockUHome | Find gadgets perfect for your home</title>
+      </Helmet>
       <div styleName="intro">
         <div styleName="intro__svg">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

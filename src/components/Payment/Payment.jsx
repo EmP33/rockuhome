@@ -27,6 +27,7 @@ import { Link, useNavigate, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { userActions } from "../../store/userSlice";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -84,6 +85,10 @@ const Cart = () => {
 
   return (
     <PaymentBackdrop>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>RockUHome - Payment</title>
+      </Helmet>
       <Outlet />
       <div styleName="payment-navbar">
         <Link to="/" styleName="payment-navbar__header-logo">

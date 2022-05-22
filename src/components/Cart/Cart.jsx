@@ -8,6 +8,8 @@ import CartBackdrop from "./CartBackdrop";
 
 import { BsArrowLeft } from "react-icons/bs";
 
+import { Helmet } from "react-helmet";
+
 import { Link, useNavigate, Outlet } from "react-router-dom";
 
 import { useSelector } from "react-redux";
@@ -26,6 +28,10 @@ const Cart = () => {
 
   return (
     <CartBackdrop>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>RockUHome - Cart</title>
+      </Helmet>
       <Outlet />
       <div className={classes.cart}>
         <section className={classes["order-section"]}>

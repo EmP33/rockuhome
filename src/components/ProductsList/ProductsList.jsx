@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next";
 import ItemCard from "../ShopItems/ItemCard/ItemCard";
 import Nothing from "./Nothing/Nothing";
 
+import { Helmet } from "react-helmet";
+
 // MUI
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -178,6 +180,13 @@ const ProductsList = () => {
 
   return (
     <main className="main">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          RockUHome{" - "}
+          {params.searchInput ? `${params.searchInput}` : t(`${category.slug}`)}
+        </title>
+      </Helmet>
       <Outlet />
       <article styleName="products">
         <div styleName="products-header">

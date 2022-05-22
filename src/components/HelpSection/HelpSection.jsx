@@ -13,6 +13,7 @@ import {
 import { Link } from "react-router-dom";
 
 import { Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const HelpSection = () => {
   const { t } = useTranslation();
@@ -22,6 +23,10 @@ const HelpSection = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>RockUHome - Help Center</title>
+      </Helmet>
       <Outlet />
       <main styleName="main">
         <section styleName="main-header">

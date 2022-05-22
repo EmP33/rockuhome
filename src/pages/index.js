@@ -6,7 +6,6 @@ import PaymentsPage from "./Help/PaymentsPage";
 import PrivacyPage from "./Help/PrivacyPage";
 import RegulationsPage from "./Help/RegulationsPage";
 import ShippingPage from "./Help/ShippingPage";
-import Main from "./Main/Main";
 import ProductDetailPage from "./Product/ProductDetailPage";
 import ProductsPage from "./Product/ProductsPage";
 import SearchingPage from "./Product/SearchingPage";
@@ -22,7 +21,6 @@ export {
   PrivacyPage,
   RegulationsPage,
   ShippingPage,
-  Main,
   ProductDetailPage,
   ProductsPage,
   SearchingPage,

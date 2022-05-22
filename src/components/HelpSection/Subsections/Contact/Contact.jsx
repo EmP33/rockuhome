@@ -8,6 +8,8 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 import { Outlet } from "react-router-dom";
 
+import { Helmet } from "react-helmet";
+
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -49,6 +51,10 @@ const Contact = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>RockUHome - Contact Us</title>
+      </Helmet>
       <Outlet />
       <section styleName="contact">
         <div styleName="contact__header">
