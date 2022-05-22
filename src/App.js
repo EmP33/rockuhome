@@ -6,6 +6,10 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import { AnimatePresence } from "framer-motion";
+
+import { useLocation } from "react-router-dom";
+
 import {
   CartPage,
   PaymentPage,
@@ -35,6 +39,7 @@ import { getAllProducts, getAllCategories } from "./lib/api";
 import IntroPage from "./pages/Intro/IntroPage";
 
 const App = () => {
+  const location = useLocation();
   const dispatch = useDispatch();
 
   const {
@@ -73,8 +78,8 @@ const App = () => {
   dispatch(productActions.setCategories(categories));
 
   return (
-    <Router>
-      <Routes>
+    <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home/*" element={<IntroPage />}>
           <Route path={`product/:productID`} element={<ProductDetailPage />} />
@@ -108,7 +113,7 @@ const App = () => {
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Router>
+    </AnimatePresence>
   );
 };
 

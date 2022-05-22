@@ -28,6 +28,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { userActions } from "../../store/userSlice";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import { motion, AnimatePresence } from "framer-motion";
+
+const paymentVariants = {
+  hidden: { x: "100vw" },
+  visible: { x: 0 },
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -107,7 +119,12 @@ const Cart = () => {
       </div>
       {activeStep === 2 && !loadingNextStep && <Confirmation />}
       {activeStep !== 2 && (
-        <>
+        <motion.div
+          variants={paymentVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
           <h1 styleName="payment-header">{t("checkout")}</h1>
           <div styleName="payment">
             <section styleName="content-section">
@@ -148,7 +165,7 @@ const Cart = () => {
               {activeStep === 2 ? "" : <Review />}
             </section>
           </div>
-        </>
+        </motion.div>
       )}
     </PaymentBackdrop>
   );

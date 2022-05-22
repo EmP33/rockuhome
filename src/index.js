@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 
+import { BrowserRouter as Router } from "react-router-dom";
+
 // Language changer
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
@@ -30,7 +32,9 @@ i18n
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

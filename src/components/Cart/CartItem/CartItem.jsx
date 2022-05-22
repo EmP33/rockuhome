@@ -14,6 +14,25 @@ import { Link } from "react-router-dom";
 import useHttp from "../../../hooks/use-http";
 import { removeProductCart, updateProductCart } from "../../../lib/api";
 
+import { AnimatePresence, motion } from "framer-motion";
+
+const cartItemVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    opacity: 0,
+    transition: { duration: 1, ease: "easeInOut" },
+  },
+};
+
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
@@ -52,78 +71,90 @@ const CartItem = ({ item }) => {
   }, [updateStatus, updatedCart, dispatch]);
 
   return (
-    <div styleName={itemClass}>
-      {<img src={item.image.url} alt="Icon" />}
-      <div styleName={"itemName"}>
-        <Link to={`/cart/${item.product_id}`}>{item.name}</Link>
-        {item.selected_options.length !== 0 && (
-          <p>
-            {item.selected_options[0]?.group_name}:{" "}
-            {item.selected_options[0]?.option_name}
-          </p>
-        )}
-      </div>
-      <div styleName={"itemCounter"}>
-        <span>
-          {" "}
-          {/* Conditional render on button element to prevent span clicks */}
-          {updateStatus === "pending" ? (
-            <button
-              onClick={() => changeQtyHandler(item.quantity - 1)}
-              disabled
-            >
-              <HiOutlineMinusSm />
-            </button>
-          ) : (
-            <button onClick={() => changeQtyHandler(item.quantity - 1)}>
-              <HiOutlineMinusSm />
-            </button>
-          )}
-          {!updateStatus || updateStatus === "completed" ? (
-            <span>{item.quantity}</span>
-          ) : (
-            ""
-          )}
-          {updateStatus === "pending" && (
+    <AnimatePresence>
+      {removeStatus !== "pending" && (
+        <motion.div
+          styleName={itemClass}
+          variants={cartItemVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          {<img src={item.image.url} alt="Icon" />}
+          <div styleName={"itemName"}>
+            <Link to={`/cart/${item.product_id}`}>{item.name}</Link>
+            {item.selected_options.length !== 0 && (
+              <p>
+                {item.selected_options[0]?.group_name}:{" "}
+                {item.selected_options[0]?.option_name}
+              </p>
+            )}
+          </div>
+          <div styleName={"itemCounter"}>
             <span>
-              <RiLoader3Fill className="spinning" />
+              {/* Conditional render on button element to prevent span clicks */}
+              {updateStatus === "pending" ? (
+                <button
+                  onClick={() => changeQtyHandler(item.quantity - 1)}
+                  disabled
+                >
+                  <HiOutlineMinusSm />
+                </button>
+              ) : (
+                <button onClick={() => changeQtyHandler(item.quantity - 1)}>
+                  <HiOutlineMinusSm />
+                </button>
+              )}
+              {!updateStatus || updateStatus === "completed" ? (
+                <span>{item.quantity}</span>
+              ) : (
+                ""
+              )}
+              {updateStatus === "pending" && (
+                <span>
+                  <RiLoader3Fill className="spinning" />
+                </span>
+              )}
+              {/* Conditional render on button element to prevent span clicks */}
+              {updateStatus === "pending" ? (
+                <button
+                  onClick={() => changeQtyHandler(item.quantity + 1)}
+                  disabled
+                >
+                  <HiOutlinePlusSm />
+                </button>
+              ) : (
+                <button onClick={() => changeQtyHandler(item.quantity + 1)}>
+                  <HiOutlinePlusSm />
+                </button>
+              )}
             </span>
-          )}
-          {/* Conditional render on button element to prevent span clicks */}
-          {updateStatus === "pending" ? (
-            <button
-              onClick={() => changeQtyHandler(item.quantity + 1)}
-              disabled
-            >
-              <HiOutlinePlusSm />
-            </button>
-          ) : (
-            <button onClick={() => changeQtyHandler(item.quantity + 1)}>
-              <HiOutlinePlusSm />
-            </button>
-          )}
-        </span>
-      </div>
-      <span styleName={"itemPrice"}>{item.price.formatted_with_code}</span>
-      <div styleName={"itemRemoveDiv"}>
-        {/* Conditional render on button element to prevent span clicks */}
-        {removeStatus ? (
-          <button
-            styleName={"itemRemoveButton"}
-            onClick={removeItemHandler}
-            disabled
-          >
-            {!removeStatus && <IoCloseOutline />}
-            {removeStatus && <IoCloseOutline className={"spinning"} />}
-          </button>
-        ) : (
-          <button styleName={"itemRemoveButton"} onClick={removeItemHandler}>
-            {!removeStatus && <IoCloseOutline />}
-            {removeStatus && <IoCloseOutline className={"spinning"} />}
-          </button>
-        )}
-      </div>
-    </div>
+          </div>
+          <span styleName={"itemPrice"}>{item.price.formatted_with_code}</span>
+          <div styleName={"itemRemoveDiv"}>
+            {/* Conditional render on button element to prevent span clicks */}
+            {removeStatus ? (
+              <button
+                styleName={"itemRemoveButton"}
+                onClick={removeItemHandler}
+                disabled
+              >
+                {!removeStatus && <IoCloseOutline />}
+                {removeStatus && <IoCloseOutline className={"spinning"} />}
+              </button>
+            ) : (
+              <button
+                styleName={"itemRemoveButton"}
+                onClick={removeItemHandler}
+              >
+                {!removeStatus && <IoCloseOutline />}
+                {removeStatus && <IoCloseOutline className={"spinning"} />}
+              </button>
+            )}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

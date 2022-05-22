@@ -49,7 +49,6 @@ const ProductsList = () => {
   );
 
   useEffect(() => {
-    console.log(window);
     window.scrollTo(0, 0);
   }, []);
 
