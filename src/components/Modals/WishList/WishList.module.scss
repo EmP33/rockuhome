@@ -30,9 +30,6 @@
   @media only screen and (max-width: 37.5em) {
     grid-template-columns: 1fr;
   }
-  @media only screen and (max-width: 25em) {
-    padding: 0.5rem;
-  }
 
   &__close-btn {
     position: absolute;
@@ -42,7 +39,7 @@
     height: 3rem;
     font-size: 2rem;
     background: none;
-    border: 1px solid var(--color-primary);
+    border: none;
     color: var(--color-highlight);
     display: flex;
     align-items: center;
@@ -55,10 +52,6 @@
       height: 5rem;
       font-size: 4rem;
     }
-
-    &:hover {
-      border: var(--border-details);
-    }
   }
 
   & h2 {
@@ -69,9 +62,6 @@
   &__products {
     display: grid;
 
-    @media only screen and (max-width: 25em) {
-      padding: 1rem;
-    }
     & > h1 {
       font-size: 2rem;
       margin: 0;
@@ -114,7 +104,8 @@
       @media only screen and (max-width: 37.5em) {
         max-height: 75vh;
       }
-      @media only screen and (max-width: 25em) {
+
+      @media only screen and (max-width: 31.25em) {
         grid-template-columns: max-content;
       }
 
