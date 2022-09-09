@@ -1,11 +1,11 @@
-import bathroom from "../assets/bathroom.jpg";
-import kitchen from "../assets/kitchen.jpg";
-import living_room from "../assets/living_room.jpg";
-import bedroom from "../assets/bedroom.jpg";
-import hall from "../assets/hall.jpg";
-import dining_room from "../assets/dining_room.jpg";
-import office from "../assets/office.jpg";
-import garage from "../assets/garage.jpg";
+import bathroom from "../assets/bathroom.webp";
+import kitchen from "../assets/kitchen.webp";
+import living_room from "../assets/living_room.webp";
+import bedroom from "../assets/bedroom.webp";
+import hall from "../assets/hall.webp";
+import dining_room from "../assets/dining_room.webp";
+import office from "../assets/office.webp";
+import garage from "../assets/garage.webp";
 
 export default {
   bathroom,
